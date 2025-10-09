@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book Appointment Page</title>
+  <link rel="stylesheet" href="bookappointment.css">
+  <script src="bookappointment.js"defer></script>
+</head>
+
+<body>
+    <header>
+    <nav>
+          <ul>
+      <li><a href="#"><img src="https://i.ibb.co/wbbLzvK/ei-1758547929683-removebg-preview.png" alt="home-page"><strong>HealthWave  </strong>Response</a></li>
+      <li class="hideOnMobile"><a href="index.html">Home</a></li>
+      <li class="hideOnMobile"><a href="about.html">About</a></li>
+      <li class="hideOnMobile"><a href="medicalServices.html">Services</a></li>
+      <li class="hideOnMobile"><a href="doctor.html">Doctors</a></li>
+      <li class="hideOnMobile"><a href="contact.html">Contact</a></li>
+      <li class="hideOnMobile"><a href="bookappointment.html" class="book-appointment">Book Appointment</a></li>
+      <li class="menu-change" onclick="show()"><a href="#"><img src="https://i.ibb.co/N2v1pRkw/1menu.png" alt="menu-icon"></a></li>
+      <li><button id="themeSwitch" class="hideOnMobil">Darkmode</button></li>
+    </ul>
+  
+    </nav>
+    <nav id="sidebar"  class="sidebar">
+      <li onclick="hide()">
+    <ul>
+      <li><a href=""><img src="https://i.ibb.co/CK0MHHgr/1close.png" alt="close-icon"></a></li>
+      <li class="home"><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="medicalServices.html">Service</a></li>
+      <li><a href="doctor.html">Doctors</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      
+      <li><a href="bookappointment.html" class="book-appointment">Book Appointment</a></li>
+    </ul>
+    </nav>
+
+  </header>
+
+
+  
+<section class="hero-cont">
+     <div class="big-img-cont">
+  <div class="img-cont">
+    <img src="https://i.ibb.co/BH9RbMw0/book-appointment-z.jpg" alt="hospital">
+    <img src="https://i.ibb.co/yctTZJhs/book-appointment-s.jpg" alt="hospital">
+    <img src="https://i.ibb.co/WpDQ1NtX/appointment.jpg" alt="hospital">
+  </div>
+</div>
+</section>
+      </section>
+        <div class="arrow-up">
+       <a href="doctor.html"><img src="https://i.ibb.co/bDpPW6S/arrow-shape-up.png" alt="up"></a> 
+      </div>
+<section class="head">
+  <h1>Book Your Appointment</h1>
+  <h3>Schedule a visit with our expert doctors and receive the best healthcare services in Nigeria.</h3>
+  <div class="container">
+    <div class="sub-container">
+      <a href="#text1" class="text1">1</a>
+      <p>Personal Information</p>
+      </div>
+    
+    <div class="sub-container">
+       <a href="#text2 " onclick="makeSure()" class="text2">2</a>
+       <p>Select Speciality & Doctor</p>
+    </div>
+    
+    <div class="sub-container">
+         <a href="#text3" onclick="realSure()" class="text3">3</a>
+         <p>Confirmation</p>
+    </div>
+
+  </div>
+</section>
+<section class="forms-page" id="text1">
+<h2>Personal Information</h2>
+  <form action="" >
+  
+    <div class="short-info">
+      <label for="first-name">First Name:</label>
+      <input type="text" id="first-name" placeholder="first-name"  required>
+    </div>
+    
+     <div class="short-info">
+      <label for="last-name">last Name:</label>
+      <input type="text" placeholder="Last-Name"  id="last-name" required>
+    </div>
+    
+     <div class="short-info">
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" placeholder="Your-Email" required>
+    </div>
+
+  <div class="short-info">
+      <label for="number">Phone No.:</label>
+      <input type="number" placeholder="Your-Name"  name="number" id="number" required>
+  </div>
+
+ <div class="short-info">
+      <label for="date">Date of birth</label>
+    <input type="date" placeholder="Your-date" id="date">
+</div>
+
+<div class="short-info">
+  <label for="gender">Gender</label>
+           <br>
+           <select name="gender" id="gender">
+             <option value="male">Male</option>
+             <option value="female">Female</option>
+             <option value="both">Both</option>
+           </select>
+</div>
+
+  <div class="short-info">
+      <label for="address">Address</label>
+      <textarea name="address" id="address" cols="30" rows="5" placeholder="Info goes here....."></textarea>
+  </div>
+    
+  <div class="short-info">
+    <label for="city">City</label>
+    <input type="text" name="city" id="city">
+  </div>
+    
+  <div class="short-info">
+    <label for="zip">Zip/Postal Code</label>
+    <input type="text" name="zip" id="zip">
+  </div>
+    
+    <button type="submit" class="submit"> <a href="#text2" onclick="ensure()">Go to the Next Form Pls</a> </button>
+  </form>
+</section>
+
+
+<section class="forms-page" id="text2">
+<h2>Select Speciality & Doctor</h2>
+  <form action="" >
+  
+    <div class="short-info">
+      <label for="branch">Select Branch</label>
+           <br>
+           <select name="branch" id="branch">
+             <option value="branch">Select a Branch</option>
+             <option value="Abuja Branch">Abuja Branch</option>
+             <option value="Lagos Main Branch">Lagos Main Branch</option>
+              <option value="Port Harcourt Branch">Port Harcourt Branch</option>
+           </select>
+    </div>
+    
+     <div class="short-info">
+      <label for="specialist">Select Medical Specialists</label>
+           <br>
+           <select name="specialist" id="specialist">
+             <option value="medical Specialists">Select Medical Specialists</option>
+             <option value="Cardiologist">Cardiologist</option>
+             <option value="Neurologist">Neurologist</option>
+             <option value="Orthopaedic">Orthopaedic</option>
+              <option value="Dermatologists">Dermatologists</option>
+              <option value="Dental Care">Dental Care</option>
+             <option value="Nephrology">Nephrology</option>
+              <option value="Radiology">Radiology</option>
+             <option value="Oncology">Oncology</option>
+             <option value="Surgery">Surgery</option>
+              <option value="Gynecologic& Obstetrics">Obstetrics & Gynoptecologic</option>
+               <option value="Paediatric">Paediatric</option>
+                <option value="ENT">ENT(Ear, Nose, Throat)</option>
+               <option value="consultation">General Medical Consultation</option>
+              
+           </select>
+    </div>
+    <div class="short-info">
+      <label for="doctors">Doctors</label>
+      <select name="doctors" id="doctors">
+        <option value="Dr. Dan Holmes">Dr. Dan Holmes</option>
+        <option value="Dr. James Peter">Dr. James Peter</option>
+        <option value="Dr. Erika Neil">Dr. Erika Neil</option>
+        <option value="Dr. Timmy Starton">Dr. Timmy Starton</option>
+        <option value="Dr. Elizabeth Smith">Dr. Elizabeth Smith</option>
+        <option value="John Hunter">John Hunter</option>
+        <option value="Joseph Lister">Joseph Lister</option>
+        <option value="Joel L. Cohen">Joel L. Cohen</option>
+        <option value="Barbara Sturm">Barbara Sturm</option>
+        <option value="Dr. Tony Stark">Dr. Tony Stark</option>
+      </select>
+  </div>
+
+  <div class="short-info">
+      <label for="date">Preferred Date</label>
+      <input type="date" name="date" id="date">
+  </div>
+
+ <div class="short-info">
+      <label for="time">Preferred Time</label>
+    <input type="time" name="time"id="time">
+</div>
+
+
+
+  <div class="short-info">
+      <label for="visit">Return For Visit</label>
+      <textarea name="visit" id="visit" cols="30" rows="5" placeholder="Info goes here....."></textarea>
+  </div>
+    
+  <div class="short-info radio">
+    <label for="radio">Do you have NHIS (National Health Insurance)</label>
+     <label for="yes">Yes</label>
+    <input type="radio" name="radio" id="yes">
+      <label for="no">No</label>
+   <input type="radio" name="radio" id="no">
+     
+  </div>
+      <button type="submit" class="submit"> <a href="#text1">Go to the Previous Form </a> </button>
+    <button type="submit" onclick="make()" class="submit"> <a href="#text3">Go to the Next Form Pls</a> </button>
+    
+    </form>
+</section>
+
+<section class="forms-page" id="text3">
+<h2>Confirmation</h2>
+  <form action="" >
+    <h2>Appointment History</h2>
+  
+    <div class="short-info">
+      <label for="name">FullName:</label>
+      <p id="reveal"></p>
+    </div>
+    
+     <div class="short-info">
+      <label for="email">Contact:</label>
+      <p id="contact"></p>
+      <p id="contact1"></p>
+    </div>
+
+ <div class="short-info">
+      <label for="Branch">Branch</label>
+    <p id="branchText"></p>
+</div>
+
+<div class="short-info">
+  <label for="specialist">Speciality</label>
+  <p id="speciaty"></p>
+</div>
+
+  <div class="short-info">
+      <label for="doctor">Doctor</label>
+<p id="doctorText"></p>
+  </div>
+    
+  <div class="short-info">
+    <label for="city">Date</label>
+    <p id="dateText"></p>
+    <p id="timeText"></p>
+  </div>
+    
+  <div class="short-info">
+    <label for="radio">Insurance </label>
+    <p id="radioText"></p>
+  </div>
+  
+  <div class="short-info">
+    <label for="visit">Reason For Visit</label>
+    <p id="visitText"></p>
+  </div>
+  
+  <div class="short-info unique" >
+    <h5>Please arrive 15 minute before your scheduled appointment. Bring any previous medical-report and a valid ID </h5>
+  </div>
+    
+    <div class="short-info privacy">
+      <input type="checkbox"> I agree to the <a href="#">Terms & Condition</a> and <a href="#">Privacy and Policy</a>
+    </div>
+    
+    <button type="submit" class="submit back"> <a href="#text2">Back: Select Doctor</a> </button>
+   <button type="submit" class="submit"> <a href="#" onclick="submit()">Confirm Appointment</a> </button>
+  </form>
+</section>
+
+   <footer>
+     <div class="footer-body">
+       <ul class="foot">
+         <li class="foot-title"><a href="#"><img src="https://i.ibb.co/wbbLzvK/ei-1758547929683-removebg-preview.png" alt=""><strong>HealthWave  </strong>Response</a></li>
+         
+         <br>
+         <p>HealthWave Progress Hospital provides world-class healthcare services with compassion and cutting-edge technology.</p>
+             <div class="links">
+    <a href="https://www.facebook.com/timothy.nse.5"> <i class="fa fa-facebook-f" style="color: blue"></i> </i></a> 
+     <a href="https://x.com/TimothyNse24709?s=09"> <i class="fa fa-twitter" style="color: lightblue"></i></a>
+     <a href="https://youtube.com/@timothynse6747?si=Xwh70SDQgZ2uoWsi"> <i class="fa fa-youtube-play" style="color: red"></i></a>
+    </div>
+       </ul>
+       <ul class="foot">
+         <li>Quick links</li>
+         <li><a href="index.html">Home</a></li>
+         <li><a href="about.html">About Us</a></li>
+         <li><a href="medicalServices.html">Services</a></li>
+         <li><a href="doctor.html">Doctors</a></li>
+         <li><a href="contact.html">Contacts</a></li>
+       </ul>
+       <ul class="foot">
+         <li>Department</li>
+         <li><a href="medicalServices.html">Cardiology</a></li>
+         <li><a href="medicalServices.html">Neurology</a></li>
+         <li><a href="medicalServices.html">Orthopedic </a></li>
+         <li><a href="medicalServices.html">Radiology</a></li>
+          </ul>
+             
+   
+     </div>
+       <div class="foot-end">
+       <p> &copy; HealthWave Progress Nigeria. All right reserved</p>
+       <p>Privacy</p>
+       <p>Terms & Condition</p>
+
+   </footer>
+</body>
+
+               </html>
