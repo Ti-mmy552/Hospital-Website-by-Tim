@@ -1,0 +1,557 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 1s ease;
+}
+body {
+    font-size: 15pt;
+    
+}
+html{
+  scroll-behavior: smooth;
+}
+:root{
+  --base-color: #ffffff;
+  --text-color: shamrock;
+  --base-variant: whitesmoke;
+  --text-variant: black;
+  --base-green: darkgreen;
+  --text-green: darkgreen;
+  --text-white: white;
+  --text-green-variant: seagreen;
+}
+.darkmode{
+  --base-color:  #070b1d;
+  --base-variant: #101425;
+  --text-color: #ffffff;
+  --base-green: darkgreen;
+  --text-green-variant: seagreen;
+  --secondary-color:#a4a5b3;
+  --primary-color:#3a435d;
+  --accent-color:#0071ff;
+}
+header #themeSwitch{
+  background: var(--base-color);
+  color: var(--text-green);
+  padding: 5px;
+  font-size: 60%;
+  border-radius: 20px;
+  box-shadow: 2px 2px 3px grey;
+  translate: 1s all;
+  border: 2px solid var(--base-green);
+}
+.hideOnMobil:hover{
+  transform: scale(1.1);
+  background: var(--base-green);
+  color: var(--text-white);
+}
+
+header{
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  opacity: 1;
+  z-index: 999;
+}
+nav{
+  background: var(--base-color);
+  color: var(--text-color);
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  display: block;
+  font-size: 90%;
+}
+ul{
+  display: flex;
+  list-style-type: none;
+}
+li{
+  height: 50px;
+}
+  
+li a{
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  text-decoration: none;
+  color: var(--text-green-variant);
+  transition: .3s all
+}
+ul li:first-child{
+  margin-right: auto;
+  font-size: 1.2em;
+}
+li strong{
+  color: var(--text-green);
+  margin-right: 2px;
+}
+ul li strong:hover{
+  color:var(--text-white);
+}
+li .book-appointment{
+  background: var(--base-green);
+  border-radius: 20px;
+  color: var(--text-white);
+}
+
+.doctor{
+  border-left: 2px solid var(--base-green);
+  text-decoration: underlin;
+  background: var(--base-green);
+  color: var(--text-white);
+}
+
+li img{
+  height: 40px;
+  max-width: 40px;
+  border-radius: 50%;
+  background: var(--text-color);
+  margin-right: 5px;
+}
+li a:hover{
+  background: var(--base-green);
+  color: var(--text-white);
+}
+.book-appointment-button{
+  background: var(--base-green);
+  border-radius: 30px;
+  height: 5%;
+  margin-top: 8px;
+  margin-left: 8px;
+  padding: 15px;
+  transition: .5s;
+  color: var(--text-white);
+  box-shadow: 2px 2px 3px grey;
+}
+.book-appointment-button:hover{
+  border: 3px solid var(--base-green);
+  background: none;
+  color: var(--text-green);
+}
+.sidebar{
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 70%;
+  height: 60vh;
+  display: none;
+  flex-direction: column;
+  background: var(--base-color);
+  box-shadow: 2px 2px 3px black;
+  z-index: 999;
+}
+.sidebar ul{
+  display: block;
+}
+.sidebar a{
+  margin-right: auto;
+}
+.menu-change{
+  display: none;
+}
+@media screen and (max-width: 400px) {
+  .menu-change{
+  display: block;
+}
+li a{
+  padding: 7px;
+  cursor: pointer;
+}
+.hideOnMobile{
+  display: none;
+}
+.book-appointment-button{
+  font-size: 14px;
+}
+ul li:first-child{
+  margin-right: auto;
+}
+li img{
+  margin-right: 0px;
+}
+}
+.hero-cont{
+  background: var(--base-variant);
+  padding: 5%;
+}
+.big-img-cont{
+  margin-top: 0px;
+  margin-left: 10%;
+  border: 2px solid green;
+  anchor-name: --hold;
+  width: 82%;
+  height: 25vh;
+  overflow-x: auto;
+  scroll-marker-group: after;
+}
+.img-cont{
+  display: flex;
+  gap: .5em;
+  width: 300vw;
+  overflow-x: auto;
+  animation: move 5s ease-in-out infinite alternate;
+}
+@keyframes move{
+  0%{
+    transform: translateX(0%);
+  }
+  30%{
+    transform: translateX(0%);
+  }
+  50%{
+    transform: translateX(-35%);
+  }
+  75%{
+    transform: translateX(-35%);
+  }
+  90%{
+    transform: translateX(-70%);
+  }
+  100%{
+    transform: translateX(-70%);
+  }
+}
+.img-cont::-webkit-scrollbar{
+  display: none;
+  scroll-behavior: smooth;
+  scroll-snap-type: proximity;
+}/*
+.big-img-cont::scroll-button(right), .big-img-cont::scroll-button(left){
+  font-size: 1em;
+  content: ">";
+  height: 60px;
+  width: 60px;
+  background: green;
+  padding: .5em;
+  border-radius: 50%;
+  position: fixed;;
+  position-anchor: --hold;
+  cursor: pointer;
+  color: white;
+  justify-content: end;
+  position-area: right center;
+}
+.big-img-cont::scroll-button(left){
+  content: "<";
+  position-area: left center;
+}
+.big-img-cont::scroll-button(right):disabled, .big-img-cont::scroll-button(left):disabled{
+  opacity: 0.5;
+  cursor: auto;
+}*/
+.big-img-cont::scroll-marker-group{
+  display: flex;
+  justify-content: center;
+  gap: .3em;
+}
+.img-cont img::scroll-marker{
+  content: "";
+  height: 3em;
+  width: 3em;
+  background: grey;
+  border-radius: 50%;
+  margin-top: -8%; 
+}
+.img-cont img::scroll-marker:target-current{
+  background: green;
+}
+.img-cont img{
+  scroll-snap-align: start;
+  width: 100vw;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  height: 25vh;
+}
+
+@media screen and (max-width: 400px) {
+  .big-img-cont{
+    height: auto;
+    margin: 9%;
+  }
+  .images-cont{
+    height: 45vh;
+  }
+  .img-cont img::scroll-marker{
+    height: .8em;
+    width: .8em;
+    margin-top: -15%; 
+  }
+  .big-img-cont::scroll-button(right), .big-img-cont::scroll-button(left){
+    padding: .05em;
+    border: none;
+    position-area: right center;
+    top: -50%;
+    height: 25px;
+    width: 25px;
+  }
+  .big-img-cont::scroll-button(left){
+    position-area: left center;
+  }
+  .img-cont img{
+  height: 20vh;
+}
+ }
+ .heading{
+   padding: 20px 5%;
+   margin-top: -30px;
+   color: var(--text-color);
+   background: var(--base-color);
+ }
+ .heading h1,h2{
+   text-align: center;
+   color: var(--text-green);
+   margin: 4% 0 3% 0;
+ }
+ .heading h4{
+   text-align: center;
+   color: var(text-color);
+ }
+ .heading ul{
+   margin: 4% 0 3% 0;
+   list-style-type: none;
+   display: flex;
+   gap: 1em;
+   flex-wrap: wrap;
+ }
+ .heading a{
+   flex-grow: 1;
+   text-decoration: none;
+   background: var(--base-green);
+   border-radius: 10px;
+   color: var(--text-white);
+   padding: 5px;
+   text-align: center;
+ }
+ .heading a:hover{
+   background: var(--base-color);
+   color: var(--text-green);
+   border: 2px solid green;
+ }  
+ #all{
+    background: var(--base-variant);
+    
+ }
+ section section{
+   display: none;
+ }
+section:target section{
+   display: block;
+ }
+
+ #cardiologists,#neurologists ,#orthopaedics, #paediatrics, #dermatologists, #surgeons{
+   padding: 30px;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 1em;
+   background: var(base-color);
+   justify-content: center;
+   align-items: center;
+   align-content: center;
+   justify-items: center;
+   cursor: pointer;
+ }
+ #cardiologist, #neurologist, #orthopaedic, #paediatric, #dermatologist, #surgeon{
+   overflow: auto;
+   background: var(--base-variant);
+   box-shadow: 3px 3px 4px grey;
+   width: 90%;
+   transition: 1s all;
+ }
+  #cardiologist:hover, #neurologist:hover, #orthopaedic:hover, #paediatric:hover, #surgeon:hover, #dermatologist:hover{
+    transform: scale(1.035);
+  }
+ 
+  .img-poster{
+   height: 40%;
+   overflow: hidden;
+ }
+ .img-poster img{
+   display: block;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   transition: 1s all;
+ }
+ .img-poster:hover img{
+   transform: scale(1.1);
+ }
+
+ .contact-info{
+   padding: 10px;
+ }
+ .name-position{
+   color: var(--text-green);
+   display: flex;
+   gap: 1em;
+ }
+ .name-position h3{
+   padding: 10px;
+ }
+ .name-position p{
+   padding: 10px;
+   border-radius: 20px;
+   border: 3px solid green;
+   background: var(--base-color);
+   transition: 1s all;
+ }
+  .name-position p:hover{
+    background: var(--base-green);
+    color: var(--text-white);
+  }
+ .more-info i{
+   color: var(--text-green);
+ }
+ .more-info p{
+   color: var(--text-color);
+   padding: 10px;
+ }
+ .location{
+   display: flex;
+   gap: 1em;
+   color: var(--text-color);
+ }
+ .location img{
+  margin-top: 10px;
+   width: 20px;
+   height: 20px;
+ }
+ .linked{
+   display: flex;
+    gap: 1em;
+ }
+ .linked p a{
+   text-decoration: none;
+   color: var(--text-green);
+ }
+ .links{
+   padding-top: 10px;
+ }
+  @media screen and (max-width: 600px) {
+ #cardiologist, #neurologist, #orthopaedic, #paediatric{
+   width: 100%;
+ }
+}
+.arrow-up{
+  display: flex;
+  justify-content: center;
+  background: var(--base-variant);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: fixed;
+  opacity: 1;
+  bottom: 20px;
+  right: 10px;
+  z-index: 9999;
+  box-shadow: grey;
+}
+.reasons-for-you{
+  background: var(--base-color);
+  padding: 30px 10%;
+}
+.reasons-for-you h2{
+  margin: 5%;
+}
+.reasons-for-you p{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--text-color);
+}
+.reasons-for-our-docs{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: .8em;
+  justify-content: center;
+  align-items: center;
+  justify-items:center ;
+  align-content: center;
+}
+@media screen and (max-width: 600px){
+ .reasons-for-our-docs{
+   gap: 3em;
+   padding: 4% 0 4% 0;
+ }
+}
+.reason{
+  background: var(--base-variant);
+  box-shadow: 2px 2px 3px grey;
+  width: 85%;
+  padding: 10px 4%;
+  border-radius: 5px;
+  transition: 1s all;
+}
+.reason:hover{
+  transform: scale(1.1);
+}
+.img-reason{
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+.img-reason img{
+  height: 50px;
+  width: 50px;
+}
+.book-appointment{
+  padding: 20px;
+  background: var(--base-variant);
+  text-align: center;
+}
+.book-appointment p{
+  color: var(--text-color);
+}
+.book-appointment-button a{
+  text-decoration: none;
+  color: var(--text-white);
+}
+footer{
+  position: relative;
+  background: var(--base-color);
+  color: var(--text-color);
+}
+.footer-body{
+  margin-top: 0px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1em;
+  
+}
+
+.footer-body .foot{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+.foot li:first-child{
+  font-size: 90%;
+}
+.foot .foot-title{
+  font-size: 50%;
+}
+.footer-body .foot:first-child{
+  width: 100%;
+}
+.foot  li a{
+  color: var(--text-color);
+  opacity: 1;
+}
+.foot-end{
+  position: absolute;
+  bottom: -40px;
+  left: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  background: var(--text-green-variant);
+}
+@media screen and (max-width: 600px) {
+  .foot-end{
+    gap: 1em;
+  }
+}
