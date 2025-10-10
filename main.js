@@ -29,4 +29,4 @@ function darkMode() {
 }
 setTimeout(() => {
   document.querySelector('.loader-background').style.display = 'none';
-}, 000);
+}, 3000);
