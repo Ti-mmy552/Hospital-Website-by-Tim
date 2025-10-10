@@ -164,8 +164,7 @@ li img{
 }
 .hero-cont{
   background: var(--base-variant);
-  position: relative;
-  top: -33px;
+  padding: 5%;
 }
 .big-img-cont{
   margin-top: 0px;
@@ -174,14 +173,14 @@ li img{
   anchor-name: --hold;
   width: 82%;
   height: 25vh;
-  overflow-x: auto;
+  overflow-x: hidden;
   scroll-marker-group: after;
 }
 .img-cont{
   display: flex;
   gap: .5em;
   width: 300vw;
-  overflow-x: auto;
+  overflow-x: hidden;
   animation: move 5s ease-in-out infinite alternate;
 }
 @keyframes move{
