@@ -6,7 +6,7 @@
 }
 body {
     font-size: 10pt;
-    
+
 }
 html{
   scroll-behavior: smooth;
@@ -31,22 +31,20 @@ html{
   --primary-color:#3a435d;
   --accent-color:#0071ff;
 }
-header #themeSwitch{
+#themeSwitch{
   background: var(--base-color);
   color: var(--text-green);
   padding: 5px;
-  font-size: 60%;
   border-radius: 20px;
   box-shadow: 2px 2px 3px grey;
   translate: 1s all;
   border: 2px solid var(--base-green);
 }
-.hideOnMobil:hover{
+#themeSwitch:hover{
   transform: scale(1.1);
   background: var(--base-green);
   color: var(--text-white);
 }
-
 header{
   position: sticky;
   top: 0px;
@@ -75,14 +73,14 @@ li a{
   height: 100%;
   justify-content: center;
   align-items: center;
-  padding: 12px;
+  padding: 15px;
   text-decoration: none;
   color: var(--text-green-variant);
   transition: .3s all
 }
 ul li:first-child{
   margin-right: auto;
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 li strong{
   color: var(--text-green);
@@ -91,31 +89,24 @@ li strong{
 ul li strong:hover{
   color:var(--text-white);
 }
-li .book-appointment{
-  background: var(--base-green);
-  border-radius: 20px;
-  color: var(--text-white);
-}
 
-.doctor{
-  border-left: 2px solid var(--base-green);
-  text-decoration: underlin;
-  background: var(--base-green);
-  color: var(--text-white);
-}
 
 li img{
   height: 40px;
   max-width: 40px;
   border-radius: 50%;
-  background: var(--text-color);
+  background: var(--base-color);
   margin-right: 5px;
 }
 li a:hover{
   background: var(--base-green);
   color: var(--text-white);
 }
-.book-appointment-button{
+.doctor{
+  background: var(--base-green);
+  color: var(--text-white);
+}
+.book-appointment{
   background: var(--base-green);
   border-radius: 30px;
   height: 5%;
@@ -126,7 +117,7 @@ li a:hover{
   color: var(--text-white);
   box-shadow: 2px 2px 3px grey;
 }
-.book-appointment-button:hover{
+.book-appointment:hover{
   border: 3px solid var(--base-green);
   background: none;
   color: var(--text-green);
@@ -163,7 +154,7 @@ li a{
 .hideOnMobile{
   display: none;
 }
-.book-appointment-button{
+.book-appointment{
   font-size: 14px;
 }
 ul li:first-child{
@@ -181,10 +172,11 @@ li img{
   margin-top: 0px;
   margin-left: 10%;
   border: 2px solid green;
-  anchor-name: --hold;
+  /*anchor-name: --hold;*/
   width: 82%;
-  height: 25vh;
+  height: 60vh;
   overflow-x: hidden;
+  overflow-y: hidden;
   scroll-marker-group: after;
 }
 .img-cont{
@@ -228,46 +220,7 @@ li img{
   padding: .5em;
   border-radius: 50%;
   position: fixed;;
-  position-anchor: --hold;
-  cursor: pointer;
-  color: white;
-  justify-content: end;
-  position-area: right center;
-}
-.big-img-cont::scroll-button(left){
-  content: "<";
-  position-area: left center;
-}
-.big-img-cont::scroll-button(right):disabled, .big-img-cont::scroll-button(left):disabled{
-  opacity: 0.5;
-  cursor: auto;
-}*/
-.big-img-cont::scroll-marker-group{
-  display: flex;
-  justify-content: center;
-  gap: .3em;
-}
-.img-cont img::scroll-marker{
-  content: "";
-  height: 3em;
-  width: 3em;
-  background: grey;
-  border-radius: 50%;
-  margin-top: -8%; 
-}
-.img-cont img::scroll-marker:target-current{
-  background: green;
-}
-.img-cont img{
-  scroll-snap-align: start;
-  width: 100vw;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  height: 25vh;
-}
-
-@media screen and (max-width: 400px) {
-  .big-img-cont{
+  position-anchor: --hold  .big-img-cont{
     height: auto;
     margin: 9%;
   }
@@ -293,7 +246,70 @@ li img{
   .img-cont img{
   height: 20vh;
 }
- }
+  cursor: pointer;
+  color: white;
+  justify-content: end;
+  position-area: right center;
+}
+.big-img-cont::scroll-button(left){
+  content: "<";
+  position-area: left center;
+}
+.big-img-cont::scroll-button(right):disabled, .big-img-cont::scroll-button(left):disabled{
+  opacity: 0.5;
+  cursor: auto;
+} */
+.big-img-cont::scroll-marker-group{
+  display: flex;
+  justify-content: center;
+  gap: .3em;
+}
+.img-cont img::scroll-marker{
+  content: "";
+  height: 3em;
+  width: 3em;
+  background: grey;
+  border-radius: 50%;
+  margin-top: -8%; 
+}
+.img-cont img::scroll-marker:target-current{
+  background: green;
+}
+.img-cont img{
+  scroll-snap-align: start;
+  width: 100vw;
+  object-fit: cover;
+  height: 60vh;
+}
+
+@media screen and (max-width: 400px) {
+   .big-img-cont{
+    height: auto;
+    margin: 9%;
+  }
+  .images-cont{
+    height: 45vh;
+  }
+  .img-cont img::scroll-marker{
+    height: .8em;
+    width: .8em;
+    margin-top: -15%; 
+  }
+  .big-img-cont::scroll-button(right), .big-img-cont::scroll-button(left){
+    padding: .05em;
+    border: none;
+    position-area: right center;
+    top: -50%;
+    height: 25px;
+    width: 25px;
+  }
+  .big-img-cont::scroll-button(left){
+    position-area: left center;
+  }
+  .img-cont img{
+  height: 20vh;
+}
+  }
  .heading{
    padding: 20px 5%;
    margin-top: -30px;
