@@ -283,7 +283,7 @@ li img{
   height: 60vh;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 700px) {
    .big-img-cont{
     height: auto;
     margin: 9%;
